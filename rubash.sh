@@ -86,6 +86,7 @@ log() {
 }
 
 parse_args() {
+	log parsing arguments for function ${FUNCNAME[1]}
 	local parse_def=true
 	local arg_name
 	local arg_value
@@ -101,12 +102,12 @@ parse_args() {
 			elif [[ $1 == --*=* ]]; then
 				# argument
 				IFS='=' read -r arg_name arg_default_value <<<"${1#--}"
-				log "argument: $arg_name, default: $arg_default_value"
+				# log "argument: $arg_name, default: $arg_default_value"
 				args["$arg_name"]="$arg_default_value"
 			elif [[ $1 == --* ]]; then
 				# flag
 				arg_name="${1#--}"
-				log "flag: $arg_name"
+				# log "flag: $arg_name"
 				args["$arg_name"]=false
 			else
 				fatal "wrong definition: $1"
