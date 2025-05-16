@@ -86,7 +86,7 @@ log() {
 }
 
 parse_args() {
-	log parsing arguments for function ${FUNCNAME[1]}
+	log parsing arguments for function "${FUNCNAME[1]}"
 	local parse_def=true
 	local arg_name
 	local arg_value
@@ -120,7 +120,7 @@ parse_args() {
 				args["$arg_name"]="$arg_value"
 			elif [[ $1 == --* ]]; then
 				arg_name="${1#--}"
-				if is_empty ${args["$arg_name"]}; then fatal "wrong flag given: $arg_name"; fi
+				if is_empty "${args["$arg_name"]}"; then fatal "wrong flag given: $arg_name"; fi
 				if [[ ${args[$arg_name]} != false ]]; then fatal "$arg_name is not a flag"; fi
 				args["$arg_name"]=true
 			else
@@ -132,7 +132,7 @@ parse_args() {
 
 	for arg_name in "${!args[@]}"; do
 		arg_value="${args[$arg_name]}"
-		if is_empty $arg_value; then
+		if is_empty "$arg_value"; then
 			fatal "Argument $arg_name is obligatory"
 		else
 			eval "$arg_name='$arg_value'"
