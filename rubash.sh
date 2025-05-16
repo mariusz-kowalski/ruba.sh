@@ -1,4 +1,4 @@
-# Ruby.sh - Make Bash more Rubysh
+# Rubash - Make Bash more Rubysh
 
 is_empty() {
 	[[ -z "$1" ]]
@@ -33,7 +33,7 @@ is_not_ok() {
 }
 
 command_exists() {
-	basename $(command -v "$1" || echo "$2")
+	basename "$(command -v "$1" || echo "$2")"
 }
 
 is_tar_path() {
@@ -82,7 +82,7 @@ extension() {
 
 log() {
 	time="$(date +%Y-%m-%d_%H-%M-%S-%3N)"
-	echo2 "$time $@"
+	echo2 "$time $*"
 }
 
 parse_args() {
