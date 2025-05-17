@@ -8,35 +8,39 @@ Rubash is a lightweight Bash library that brings Ruby-like simplicity and clarit
 To make Rubash available to all users on the system:
 
 1. Clone or download the repository.
-2. Copy `rubash.sh` to a system-wide directory:
+2. Copy `rubash.sh` to a directory in the system’s `$PATH`, such as `/usr/local/bin`:
    ```bash
-   sudo cp rubash.sh /usr/local/lib/rubash.sh
+   sudo cp rubash.sh /usr/local/bin/rubash.sh
    ```
-3. Source it in `/etc/profile.d/rubash.sh` to load it for all users:
+3. Ensure `/usr/local/bin` is in your `$PATH` (it usually is by default). You can verify with:
    ```bash
-   echo '[ -f /usr/local/lib/rubash.sh ] && source /usr/local/lib/rubash.sh' | sudo tee /etc/profile.d/rubash.sh
+   echo $PATH | grep /usr/local/bin
    ```
-4. Log out and back in, or source the file manually:
+4. In your Bash scripts, include the library with:
    ```bash
-   source /usr/local/lib/rubash.sh
+   source rubash.sh
    ```
 
 ### Per-User Installation
 To install Rubash for a single user:
 
 1. Clone or download the repository.
-2. Copy `rubash.sh` to your home directory, e.g., `~/.local/lib/`:
+2. Copy `rubash.sh` to a user-specific directory in your `$PATH`, such as `~/.local/bin`:
    ```bash
-   mkdir -p ~/.local/lib
-   cp rubash.sh ~/.local/lib/rubash.sh
+   mkdir -p ~/.local/bin
+   cp rubash.sh ~/.local/bin/rubash.sh
    ```
-3. Add the following line to your `~/.bashrc` or `~/.bash_profile`:
+3. Ensure `~/.local/bin` is in your `$PATH`. Add it to `~/.bashrc` or `~/.bash_profile` if needed:
    ```bash
-   [ -f ~/.local/lib/rubash.sh ] && source ~/.local/lib/rubash.sh
+   echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
    ```
 4. Reload your shell configuration:
    ```bash
    source ~/.bashrc
+   ```
+5. In your Bash scripts, include the library with:
+   ```bash
+   source rubash.sh
    ```
 
 ## Usage Examples
