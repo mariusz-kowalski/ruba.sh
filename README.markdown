@@ -8,9 +8,9 @@ Rubash is a lightweight Bash library that brings Ruby-like simplicity and clarit
 To make Rubash available to all users on the system:
 
 1. Clone or download the repository.
-2. Copy `rubash.sh` to a directory in the system’s `$PATH`, such as `/usr/local/bin`:
+2. Copy `ruba.sh` to a directory in the system’s `$PATH`, such as `/usr/local/bin`:
    ```bash
-   sudo cp rubash.sh /usr/local/bin/rubash.sh
+   sudo cp ruba.sh /usr/local/bin/ruba.sh
    ```
 3. Ensure `/usr/local/bin` is in your `$PATH` (it usually is by default). You can verify with:
    ```bash
@@ -18,17 +18,17 @@ To make Rubash available to all users on the system:
    ```
 4. In your Bash scripts, include the library with:
    ```bash
-   source rubash.sh
+   source ruba.sh
    ```
 
 ### Per-User Installation
 To install Rubash for a single user:
 
 1. Clone or download the repository.
-2. Copy `rubash.sh` to a user-specific directory in your `$PATH`, such as `~/.local/bin`:
+2. Copy `ruba.sh` to a user-specific directory in your `$PATH`, such as `~/.local/bin`:
    ```bash
    mkdir -p ~/.local/bin
-   cp rubash.sh ~/.local/bin/rubash.sh
+   cp ruba.sh ~/.local/bin/ruba.sh
    ```
 3. Ensure `~/.local/bin` is in your `$PATH`. Add it to `~/.bashrc` or `~/.bash_profile` if needed:
    ```bash
@@ -40,12 +40,12 @@ To install Rubash for a single user:
    ```
 5. In your Bash scripts, include the library with:
    ```bash
-   source rubash.sh
+   source ruba.sh
    ```
 
 ## Usage Examples
 
-Below are simple examples demonstrating each function in `rubash.sh`.
+Below are simple examples demonstrating each function in `ruba.sh`.
 
 ### `is_empty`
 ```bash
