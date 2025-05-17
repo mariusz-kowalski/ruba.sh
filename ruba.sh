@@ -105,7 +105,7 @@ parse_args() {
 				# argument
 				IFS='=' read -r arg_name arg_default_value <<<"${1#--}"
 				# log "argument: $arg_name, default: $arg_default_value"
-				args["$arg_name"]=${arg_default_value//$NIL/""}
+				args["$arg_name"]=$arg_default_value
 			elif [[ $1 == --* ]]; then
 				# flag
 				arg_name="${1#--}"
@@ -137,7 +137,7 @@ parse_args() {
 		if is_empty "$arg_value"; then
 			fatal "Argument $arg_name is obligatory"
 		else
-			eval "$arg_name='$arg_value'"
+			eval "$arg_name='${arg_value//$NIL/""}'"
 		fi
 	done
 }
