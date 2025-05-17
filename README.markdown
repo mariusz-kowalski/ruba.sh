@@ -208,7 +208,7 @@ log "Starting process"  # Prints: 2025-05-17_01-11-23-123 Starting process (to s
 ### `parse_args`
 ```bash
 my_function() {
-  parse_args --name=John --age=30 --verbose "$@"
+  parse_args --name=John --age=30 --verbose -- "$@"
   echo "Name: $name, Age: $age, Verbose: $verbose"
 }
 my_function --name=Alice --verbose  # Prints: Name: Alice, Age: 30, Verbose: true

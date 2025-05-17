@@ -1,5 +1,7 @@
 # Rubash - Make Bash more Rubysh
 
+NIL="_𝕟𝕚𝕝_𝕧𝕒𝕝𝕦𝕖_"
+
 is_empty() {
 	[[ -z "$1" ]]
 }
@@ -103,7 +105,7 @@ parse_args() {
 				# argument
 				IFS='=' read -r arg_name arg_default_value <<<"${1#--}"
 				# log "argument: $arg_name, default: $arg_default_value"
-				args["$arg_name"]="$arg_default_value"
+				args["$arg_name"]=${arg_default_value//$NIL/""}
 			elif [[ $1 == --* ]]; then
 				# flag
 				arg_name="${1#--}"
