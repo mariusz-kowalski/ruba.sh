@@ -1,11 +1,11 @@
-# Rubash
+# Ruba.sh
 
-Rubash is a lightweight Bash library that brings Ruby-like simplicity and clarity to Bash scripting. It provides utility functions for common tasks like file checks, string manipulation, logging, and argument parsing, making your scripts more readable and maintainable.
+Ruba.sh is a lightweight Bash library that brings Ruby-like simplicity and clarity to Bash scripting. It provides utility functions for common tasks like file checks, string manipulation, logging, and argument parsing, making your scripts more readable and maintainable.
 
 ## Installation
 
 ### System-Wide Installation
-To make Rubash available to all users on the system:
+To make Ruba.sh available to all users on the system:
 
 1. Clone or download the repository.
 2. Copy `ruba.sh` to a directory in the system’s `$PATH`, such as `/usr/local/bin`:
@@ -22,7 +22,7 @@ To make Rubash available to all users on the system:
    ```
 
 ### Per-User Installation
-To install Rubash for a single user:
+To install Ruba.sh for a single user:
 
 1. Clone or download the repository.
 2. Copy `ruba.sh` to a user-specific directory in your `$PATH`, such as `~/.local/bin`:
