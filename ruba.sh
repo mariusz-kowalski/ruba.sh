@@ -88,7 +88,6 @@ log() {
 }
 
 parse_args() {
-	log parsing arguments for function "${FUNCNAME[1]}"
 	local parse_def=true
 	local arg_name
 	local arg_value
