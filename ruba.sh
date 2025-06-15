@@ -51,7 +51,7 @@ is_own() {
 }
 
 dbg() {
-	is_empty "$DEBUG_XD" && return 0
+	is_empty "${DEBUG_XD:-}" && return 0
 
 	echo "$@" >> "$DEBUG_XD"
 }
