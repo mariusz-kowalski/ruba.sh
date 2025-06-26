@@ -26,6 +26,14 @@ is_file() {
 	[[ -f "$1" ]]
 }
 
+is_block_dev() {
+	[[ -b "$1" ]]
+}
+
+is_not_block_dev() {
+	! is_block_dev "$1"
+}
+
 is_not_file() {
 	! is_file "$1"
 }
